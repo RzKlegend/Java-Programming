@@ -1,88 +1,33 @@
-/*Develop a Calculator program using overloaded methods for addition of integers and
-decimals. Use a static variable to count calculations */
-
-
-
-import java.util.Scanner;
-
 public class ass3_q1 {
+    // This is the static variable tracking the total number of calculations
+    static int calculationCount = 0;
 
-    private static int calculationCount = 0;
-
-    // Overloading method
-    public static int add(int a, int b) {
-        calculationCount++;
-        return a + b;
+    // Overloaded Method 1: Addition for integers (whole numbers)
+    void add(int a, int b) {
+        int sum = a + b;
+        calculationCount++; 
+        System.out.println("Integer Addition: " + a + " + " + b + " = " + sum);
     }
 
-    public static double add(double a, double b) {
-        calculationCount++;
-        return a + b;
-    }
-
-    public static void incrementCount() {
-        calculationCount++;
-    }
-
-    public static int getCalculationCount() {
-        return calculationCount;
+    // Overloaded Method 2: Addition for decimals
+    void add(double a, double b) {
+        double sum = a + b;
+        calculationCount++; 
+        System.out.println("Decimal Addition: " + a + " + " + b + " = " + sum);
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        ass3_q1 calc = new ass3_q1();
+        
+        // Testing the integer addition method
+        calc.add(10, 25);
+        calc.add(100, 200);
+        
+        // Testing the decimal addition method
+        calc.add(15.5, 2.5);
+        calc.add(10.25, 4.75);
 
-        System.out.println("Calculator");
-        System.out.print("enter first number: ");
-        double firstNumber = scanner.nextDouble();
-
-        System.out.print("Enter an operator (+, -, *, /): ");
-        String operator = scanner.next();
-
-        System.out.print("Enter second number: ");
-        double secondNumber = scanner.nextDouble();
-
-        double result = 0;
-
-        switch (operator) {
-            case "+":
-                if (firstNumber % 1 == 0 && secondNumber % 1 == 0) {
-                    System.out.println("using integer addition method");
-                    result = add((int) firstNumber, (int) secondNumber);
-                } else {
-                    System.out.println("using double addition method");
-                    result = add(firstNumber, secondNumber);
-                }
-                break;
-
-            case "-":
-                incrementCount();
-                result = firstNumber - secondNumber;
-                break;
-
-            case "*":
-                incrementCount();
-                result = firstNumber * secondNumber;
-                break;
-
-            case "/":
-                if (secondNumber == 0) {
-                    System.out.println("Error: division by zero");
-                    scanner.close();
-                    return;
-                }
-                incrementCount();
-                result = firstNumber / secondNumber;
-                break;
-
-            default:
-                System.out.println("Error: operator not supported");
-                scanner.close();
-                return;
-        }
-
-        System.out.println("Result: " + result);
-        System.out.println("Total calculations performed: " + getCalculationCount());
-
-        scanner.close();
+        // Printing the static variable just like your example did
+        System.out.println("Total calculations performed: " + ass3_q1.calculationCount);
     }
 }
