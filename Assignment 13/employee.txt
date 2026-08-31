@@ -1,0 +1,4 @@
+Employee ID: 260
+Name: Akash
+Department: CSE
+Salary: 4567000

@@ -1,0 +1,4 @@
+Patient ID: 260
+Name: Akash
+Age: 19
+Disease: Cold
