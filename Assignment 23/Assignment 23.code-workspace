@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../Assignment 23"
+		},
+		{
+			"path": "../Assignment 24"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.project.referencedLibraries": [
+			"lib/**/*.jar",
+			"c:\\Users\\Akash\\Downloads\\mysql-connector-j-26.7.0\\mysql-connector-j-26.7.0\\mysql-connector-j-26.7.0.jar"
+		]
+	}
+}
